@@ -368,6 +368,7 @@
 "Assets/Assetlerss/CenkoCodes/PlayerControlCam.cs"
 "Assets/Assetlerss/CenkoCodes/PlayerMovement.cs"
 "Assets/Assetlerss/CenkoCodes/PlayerRotation.cs"
+"Assets/Assetlerss/CenkoCodes/SceneChanger.cs"
 "Assets/Assetlerss/CenkoCodes/Surf.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
