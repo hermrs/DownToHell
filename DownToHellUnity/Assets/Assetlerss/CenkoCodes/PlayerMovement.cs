@@ -1,9 +1,10 @@
  using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerMovement : MonoBehaviour
 {
+    
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -39,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     float verticalInput;
     Vector3 moveDirection;
     Rigidbody rb;
-
+    public int Animo;
     public MovementState state;
     public enum MovementState
     {
@@ -51,6 +52,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
@@ -72,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.drag = 0;
         }
+        
     }
     private void FixedUpdate()
     {
@@ -108,22 +111,26 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.çök;
             moveSpeed = crouchSpeed;
+            
         }
        
-        if(grounded && Input.GetKey(SprintKey))
+        else if(grounded && Input.GetKey(SprintKey))
         {
             state = MovementState.koþma;
             moveSpeed = sprintSpeed;
+            Animo = 2;
+
         }
         else if (grounded)
         {
             state = MovementState.yürüme;
             moveSpeed = walkSpeed;
+            
         }
         else
         {
             state = MovementState.havada;
-            
+            Animo=3;
         }
     }
     private void MovePlayer()
